@@ -8,7 +8,7 @@ describe('Discounted Cash Flow valuation', () => {
         DCF = new DCFCalculator()
     })
 
-    test('Initial state of component', () => {
-        expect(DCF.state).toEqual(100)
+    test('Initial state of DCF', () => {
+        
     })
 })
