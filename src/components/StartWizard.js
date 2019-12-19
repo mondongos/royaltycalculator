@@ -1,10 +1,14 @@
 import React from 'react'
-import Step1 from './stepwizard/Step1'
+import Step1SongInfo from './stepwizard/Step1'
+import Step2StreamingInfo from './stepwizard/Step2'
 
 export default class StartWizard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            songName: '',
+            artistName: '',
+            yearReleased: null,
             currentStep: 1,
             playsPerYear: [],
             discountRate: 0
@@ -16,6 +20,7 @@ export default class StartWizard extends React.Component {
         this.setState({
             [name]: value
         })
+        console.log(this.state)
     }
 
     handleSubmit = (e) => {
@@ -101,10 +106,17 @@ export default class StartWizard extends React.Component {
             <React.Fragment>
                 <div>
                     <form onSubmit={this.handleSubmit}>
-                        <Step1
+                        <Step1SongInfo
                         currentStep={this.state.currentStep}
                         handleChange={this.handleChange}
-                        email={this.state.email}
+                        songName={this.state.songName}
+                        artistName={this.state.artistName}
+                        yearReleased={this.state.yearReleased}
+                        />
+                        <Step2StreamingInfo
+                        currentStep={this.state.currentStep}
+                        handleChange={this.handleChange}
+                        yearReleased={this.state.yearReleased}
                         />
 
                         {this.previousButton()}

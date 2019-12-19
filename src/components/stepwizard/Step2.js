@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default class Step1SongInfo extends React.Component {
+export default class Step2StreamingInfo extends React.Component {
     render() {
-        if(this.props.currentStep != 1) {
+        if(this.props.currentStep != 2) {
             return null
         }
         return (
